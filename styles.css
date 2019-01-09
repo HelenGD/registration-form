@@ -84,3 +84,7 @@ input {
     margin-bottom: 12px;
     padding: 6px 12px;
 }
+
+input:hover {
+    border: 1px solid  #8bc8e2;
+}
