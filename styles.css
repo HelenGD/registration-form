@@ -13,3 +13,9 @@ body {
     height: 100vh;
     overflow: hidden;
 }
+
+.sub-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
