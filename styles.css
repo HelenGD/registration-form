@@ -15,21 +15,26 @@ body {
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgb(48, 142, 188)),color-stop(0, rgb(198, 227, 240)),color-stop(1, rgb(80, 172, 212)));
     display: grid;
     height: 100vh;
-    overflow: hidden;
 }
 
 .sub-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background-color: #fff;
     margin-left: 100px;
     margin-right: 100px;
+}
+
+.field-wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .left_box {
     height: 100%;
     padding: 24px;
     grid-column: 1;
+    background-color: #fff;
     text-align: left;
 }
 
@@ -44,7 +49,7 @@ body {
     border: 0;
     border-radius: 4px;
     height: 36px;
-    width: 250px;
+    width: 50%;
     text-align: center;
 }
 
@@ -66,7 +71,6 @@ span {
     color: black;
     margin-bottom: 12px;
     font-family: "IBM Plex Mono", monospace;
-
 }
 
 .form-group:first-child {
@@ -87,4 +91,8 @@ input {
 
 input:hover {
     border: 1px solid  #8bc8e2;
+}
+
+.right_box {
+    grid-column: 2;
 }
