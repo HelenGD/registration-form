@@ -43,3 +43,10 @@ body {
     width: 250px;
     text-align: center;
 }
+
+p {
+    color:  rgb(48, 142, 188);
+    margin-bottom: 16px;
+    width: 100%;
+    font-size: 30px;
+}
