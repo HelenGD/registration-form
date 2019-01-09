@@ -17,6 +17,16 @@ body {
 .sub-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    background-color: #fff;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.left_box {
+    height: 100%;
+    padding: 24px;
+    grid-column: 1;
+    text-align: left;
 }
 
 .btn {
@@ -30,5 +40,6 @@ body {
     border: 0;
     border-radius: 4px;
     height: 36px;
-    width: 340px;
+    width: 250px;
+    text-align: center;
 }
