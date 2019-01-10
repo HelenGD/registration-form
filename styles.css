@@ -25,9 +25,9 @@ body {
 }
 
 .field-wrapper {
-    width: 100%;
     display: flex;
     flex-flow: row wrap;
+    margin: 0 -10px;
 }
 
 .left_box {
@@ -50,7 +50,6 @@ body {
     border-radius: 4px;
     height: 36px;
     width: 50%;
-    text-align: center;
 }
 
 p {
@@ -60,21 +59,12 @@ p {
     font-size: 30px;
 }
 
-span {
-    color: black;
-    font-size: 16px;
-    font-family: sans-serif;
-}
-
 .form-group {
     font-size: 16px;
     color: black;
     margin-bottom: 12px;
     font-family: "IBM Plex Mono", monospace;
-}
-
-.form-group:first-child {
-    margin-top: 16px;
+    flex-basis: 50%;
 }
 
 input {
@@ -89,10 +79,23 @@ input {
     padding: 6px 12px;
 }
 
-input:hover {
+input:focus {
     border: 1px solid  #8bc8e2;
 }
 
 .right_box {
     grid-column: 2;
+    background: url(http://juliannsweet.com/wp-content/uploads/2018/03/deco-chambre-adulte-bleu-avec-deco-chambre-adulte-bleu-1-indogate-chambre-bleu-marine-et-idees-et-deco-chambre-adulte-bleu-1-indogate-chambre-bleu-marine-et-blanche-1000x1000-avec-1000x1000px.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.form-intro {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.form-action {
+    text-align: center;
 }
