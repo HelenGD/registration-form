@@ -65,9 +65,10 @@ p {
     margin-bottom: 12px;
     font-family: "IBM Plex Mono", monospace;
     flex-basis: 50%;
+    padding: 0 10px;
 }
 
-input {
+.input {
     border: 0;
     border-radius: 4px;
     height: 36px;
@@ -79,7 +80,7 @@ input {
     padding: 6px 12px;
 }
 
-input:focus {
+.input:focus {
     border: 1px solid  #8bc8e2;
 }
 
