@@ -10,58 +10,111 @@
 </head>
 
 <body>
-    <div class="container">
-        <div>
-            <div class="sub-grid">
-                <div class="left_box">
-                    <div class="form-wrapper">
-                        <div class="form-intro">
-                            <p>Welcome to BlueSky</p>
-                        </div>
-                        <form>
-                            <div class="field-wrapper">
-                                <div class="form-group">
-                                    <label for="fname">First Name</label>
-                                    <input class="input" type="text" id="fname" name="fname" required="required">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="lname">Last Name</label>
-                                    <input class="input" type="text" id="lname" name="lname" required="required">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="phone">Phone</label>
-                                    <input class="input" type="tel" id="phone" name="phone" required="required">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input class="input" type="email" id="email" name="email" required="required">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="pword">Password</label>
-                                    <input class="input" type="password" id="pword" name="pword" required="required">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="pwordConfirm">Confirm Password</label>
-                                    <input class="input" type="password" id="pwordConfirm" name="pwordConfirm" required="required">
-                                </div>
-                            </div>
-                            <div class="form-action">
-                                <button type="submit" class="btn">Register</button>
-                            </div>
-                        </form>
+    <div class="page">
+        <div class="container">
+            <div class="left-box">
+                <div class="form-wrapper">
+                    <div class="form-intro">
+                        <p>Welcome to BlueSky</p>
                     </div>
+                    <form>
+                        <div class="field-wrapper">
+                            <div class="form-group">
+                                <label for="fname">First Name </label>
+                                <div class="entry-field">
+                                    <input class="input" type="text" id="fname" name="fname" required="required" style="
+                                    display: block;">
+                                </div>
+                                <div class="error-message" style="
+                                    color: red; display: none;
+                                    ">
+                                    Нужно ввести имя
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lname">Last Name</label>
+                                <div class="second-field">
+                                    <input class="input" type="text" id="lname" name="lname" required="required" style="
+                                    display: block;">
+                                </div>
+                                <div class="error-lastname" style="
+                                    color: red; display: none;
+                                    ">
+                                    Нужно ввести фамилию
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <div class="third-field">
+                                    <input class="input" type="tel" id="phone" name="phone" required="required" style="
+                                        display: block;
+                                        ">
+                                </div>
+                                <div class="error-phone" style="
+                                    color: red; display: none;
+                                    ">
+                                    Нужно ввести номер телефона
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <div class="fourth-field">
+                                    <input class="input" type="email" id="email" name="email" required="required" style="
+                                    display: block;
+                                    ">
+                                </div>
+                                <div class="error-email" style="
+                                    color: red; display: none;
+                                    ">
+                                    Нужно ввести e-mail
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pword">Password</label>
+                                <div class="fifth-field">
+                                    <input class="input" type="password" id="pword" name="pword" required="required"
+                                        style="
+                                    display: block;
+                                    ">
+                                </div>
+                                <div class="error-password" style="
+                                    color: red; display: none;
+                                    ">
+                                    Нужно ввести пароль
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pwordConfirm">Confirm Password</label>
+                                <div class="sixth-field">
+                                    <input class="input" type="password" id="pwordConfirm" name="pwordConfirm" required="required"
+                                        style="
+                                    display: block;
+                                    ">
+                                </div>
+                                <div class="error-confirm" style="
+                                    color: red; display: none;
+                                    ">
+                                    Нужно подтвердить пароль
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-action">
+                            <button type="submit" class="btn">Register</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="right_box">
-        
-                </div>
+            </div>
+            <div class="right-box">
+
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -2,26 +2,25 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: initial;
-    text-align: center;
+html, body {
+    min-height: 100vh;
     margin: 0;
+    background-repeat: no-repeat;
+    background-color: #8bc8e2;
+    background: linear-gradient(to bottom, #499bea 0%,#207ce5 100%);
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 80px;
 }
 
 .container {
-    align-items: center;
-    background-color: #8bc8e2;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBzdG9wLWNvbG9yPSIjMzA4ZWJjIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNjNmUzZjAiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzUwYWNkNCIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgb(48, 142, 188)),color-stop(0, rgb(198, 227, 240)),color-stop(1, rgb(80, 172, 212)));
-    display: grid;
-    height: 100vh;
-}
-
-.sub-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-left: 100px;
-    margin-right: 100px;
+    align-items: stretch;
+    display: flex;
 }
 
 .field-wrapper {
@@ -30,12 +29,19 @@ body {
     margin: 0 -10px;
 }
 
-.left_box {
-    height: 100%;
+.left-box {
     padding: 24px;
-    grid-column: 1;
     background-color: #fff;
     text-align: left;
+    flex-basis: 50%;
+}
+
+.right-box {
+    flex-basis: 50%;
+    background: url(http://juliannsweet.com/wp-content/uploads/2018/03/deco-chambre-adulte-bleu-avec-deco-chambre-adulte-bleu-1-indogate-chambre-bleu-marine-et-idees-et-deco-chambre-adulte-bleu-1-indogate-chambre-bleu-marine-et-blanche-1000x1000-avec-1000x1000px.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .btn {
@@ -82,14 +88,6 @@ p {
 
 .input:focus {
     border: 1px solid  #8bc8e2;
-}
-
-.right_box {
-    grid-column: 2;
-    background: url(http://juliannsweet.com/wp-content/uploads/2018/03/deco-chambre-adulte-bleu-avec-deco-chambre-adulte-bleu-1-indogate-chambre-bleu-marine-et-idees-et-deco-chambre-adulte-bleu-1-indogate-chambre-bleu-marine-et-blanche-1000x1000-avec-1000x1000px.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 
 .form-intro {
