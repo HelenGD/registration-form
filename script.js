@@ -1,69 +1,124 @@
+function isEmail(value) {
+  return value.includes('@');
+}
+
+function isEmpty(value = '') {
+  return !(value.trim());
+}
+
+function isPhone(value = '') {
+  // input
+  // 8 987 654 32 10 - true
+  // +7 987-654-32-10 - true
+  // +7 (987) 654-32-10 - true
+  // +7(987) 654 32 10 - true
+  // 8987654 - false
+  // +79876543210 - true
+
+  // заменить первую 8 на +7
+  // +7 987 654 32 10
+  // +7 987-654-32-10
+  // +7 (987) 654-32-10
+  // +7(987) 654 32 10
+  // +7987654
+  // +79876543210
+
+  // удалить все символы кроме + (первый символ)
+  // +79876543210
+  // +79876543210
+  // +79876543210
+  // +79876543210
+  // +7987654
+  // +79876543210
+
+  // проверить длину номера (11 символов)
+  // 79876543210 - true
+  // 79876543210 - true
+  // 79876543210 - true
+  // 79876543210 - true
+  // 7987654 - false
+  // 79876543210 - true
+  const formattedPhone = value
+    .replace(/^8/, '+7')
+    .replace(/\D/g, '');
+
+  return formattedPhone.length === 11;
+}
+
+function showError(inputEl, errorMessage) {
+  const errorEl = inputEl.parentElement.querySelector('.error');
+  errorEl.style.display = 'block';
+
+  if (errorMessage) {
+    errorEl.textContent = errorMessage;
+  }
+}
+
+function hideError(inputEl) {
+  const errorEl = inputEl.parentElement.querySelector('.error');
+  errorEl.style.display = 'none';
+}
+
 const inputUnit = document.querySelector('.entry-field .input');
-const errorMessage = document.querySelector('.error-message');
-console.log(errorMessage);
+
 inputUnit.addEventListener('input', (e) => {
-  if (!e.target.value) {
-    errorMessage.style.display = 'block';
+  if (isEmpty(e.target.value)) {
+    showError(e.target, '*Нужно ввести имя');
   } else {
-    errorMessage.style.display = 'none';
+    hideError(e.target);
   }
 });
 
 const inputLastName = document.querySelector('.second-field .input');
-const errorLastName = document.querySelector('.error-lastname');
 
 inputLastName.addEventListener('input', (e) => {
-  if (!e.target.value) {
-    errorLastName.style.display = 'block';
+  if (isEmpty(e.target.value)) {
+    showError(e.target, '*Нужно ввести фамилию');
   } else {
-    errorLastName.style.display = 'none';
+    hideError(e.target);
   }
 });
 
 const inputPhoneNumber = document.querySelector('.third-field .input');
-const errorPhoneNumber = document.querySelector('.error-phone');
 
 inputPhoneNumber.addEventListener('input', (e) => {
-  if (!e.target.value) {
-    errorPhoneNumber.style.display = 'block';
+  if (!isPhone(e.target.value)) {
+    showError(e.target, '*Нужно ввести номер телефона');
   } else {
-    errorPhoneNumber.style.display = 'none';
+    hideError(e.target);
   }
 });
 
 const inputEmail = document.querySelector('.fourth-field .input');
-const secondErrorMessage = document.querySelector('.error-email');
 
 inputEmail.addEventListener('input', (e) => {
-  if (e.target.value.includes('@')) {
-    secondErrorMessage.style.display = 'none';
+  if (isEmail(e.target.value)) {
+    hideError(e.target);
   } else {
-    secondErrorMessage.style.display = 'block';
+    showError(e.target, '*Нужно ввести e-mail');
   }
 });
 
 const inputPassword = document.querySelector('.fifth-field .input');
-const errorPassword = document.querySelector('.error-password');
 
 inputPassword.addEventListener('input', (e) => {
-  if (!e.target.value) {
-    errorPassword.style.display = 'block';
+  if (isEmpty(e.target.value)) {
+    showError(e.target, '*Нужно ввести пароль');
   } else if (confirmPassword.value && e.target.value !== confirmPassword.value) {
-    errorConfirm.style.display = 'block';
+    showError(e.target, '*Нужно подтвердить пароль');
   } else {
-    errorPassword.style.display = 'none';
+    hideError(e.target);
   }
 });
 
 const confirmPassword = document.querySelector('.sixth-field .input');
-const errorConfirm = document.querySelector('.error-confirm');
 
 confirmPassword.addEventListener('input', (e) => {
-  if (!e.target.value) {
-    errorConfirm.style.display = 'block';
+  if (isEmpty(e.target.value)) {
+    showError(e.target, '*Нужно подтвердить пароль');
   } else if (e.target.value !== inputPassword.value) {
-    errorConfirm.style.display = 'block';
+    showError(e.target, '*Нужно подтвердить пароль');
   } else {
-    errorConfirm.style.display = 'none';
+    hideError(e.target);
   }
-}); 
+});
